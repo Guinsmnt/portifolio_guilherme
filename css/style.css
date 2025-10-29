@@ -34,17 +34,28 @@
 }
 
 .header_area .main-menu .navbar .active{
-	background: var(--gradient-color);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
+    color: var(--primary-color);
+}
+
+@supports (-webkit-background-clip: text) {
+  .header_area .main-menu .navbar .active{
+    background: var(--gradient-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .header_area .main-menu .navbar a:hover{
-	background: var(--gradient-color);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
+    color: var(--primary-color);
+}
+@supports (-webkit-background-clip: text) {
+  .header_area .main-menu .navbar a:hover{
+    background: var(--gradient-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 /* end navigation */
 
@@ -523,6 +534,12 @@ body::after{
     box-shadow: 0 8px 24px rgba(0,0,0,0.06);
 }
 
+@supports not ((-webkit-backdrop-filter: blur(6px)) or (backdrop-filter: blur(6px))) {
+  .header_area .main-menu .navbar{
+    background: #ffffff;
+  }
+}
+
 /* Navbar links on white background */
 .header_area .main-menu .navbar .nav-item .nav-link{
     color: #0d1b2a;
@@ -569,6 +586,16 @@ body::after{
     border-radius: 12px;
     background: rgba(255,255,255,0.08);
     backdrop-filter: blur(4px);
+}
+
+@supports not ((-webkit-backdrop-filter: blur(4px)) or (backdrop-filter: blur(4px))) {
+  .skill-row{
+    background: rgba(255,255,255,0.12);
+  }
+}
+
+img.img-broken{
+    display: none;
 }
 
 .skill-name{
